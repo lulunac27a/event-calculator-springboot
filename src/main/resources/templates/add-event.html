@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Event Summary</title>
+</head>
+<body>
+    <h1>Add Event Summary</h1>
+    <div class="container">
+        Event Name: <span th:text="${eventInfo.name}"></span><br>
+        Event Start Date: <span th:text="${eventInfo.startDate}"></span><br>
+        Event Repeat Frequency: <span th:text="${eventInfo.repeatFrequency}"></span><br>
+        Event Repeat Often: <span th:text="${eventInfo.repeatOften}"></span><br>
+        Next Event Date: <span th:text="${nextEventDate}"></span><br>
+        <a href="/">Go Back to Home Page</a>
+    </div>
+</body>
+</html>
