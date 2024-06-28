@@ -52,6 +52,22 @@ public class Event {
         return nextEventDate;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setRepeatFrequency(RepeatFrequency repeatFrequency) {
+        this.repeatFrequency = repeatFrequency;
+    }
+
+    public void setRepeatOften(int repeatOften) {
+        this.repeatOften = repeatOften;
+    }
+
 
     public enum RepeatFrequency{
         DAILY, WEEKLY, MONTHLY, YEARLY

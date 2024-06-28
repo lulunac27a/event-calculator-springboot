@@ -16,10 +16,7 @@
                 <input type="number" id="repeat-often" th:field="*{repeatOften}" required min="1"><br>
                 Repeat frequency:
                 <select id="repeat-frequency" th:field="*{repeatFrequency}" required>
-                    <option value="daily" selected>Daily</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
-                    <option value="yearly">Yearly</option>
+                    <option th:each="interval: ${T(com.lulunac27a.eventcalculator.entity.Event.RepeatFrequency).values()}" th:value="${interval}" th:text="${interval}"></option>
                 </select><br>
                 <button type="submit">Add Event</button>
             </form>

@@ -14,19 +14,12 @@ import java.time.LocalDate;
 @Controller
 public class EventController {
     @GetMapping("/")
-    public String getNextEvent(@ModelAttribute("eventInfo") Event eventInfo, Model model){
+    public String getNextEvent(Model model){
+        Event eventInfo = new Event();
         model.addAttribute("eventInfo", eventInfo);
-        LocalDate eventStartDate = eventInfo.getStartDate();
-        RepeatFrequency repeatFrequency = eventInfo.getRepeatFrequency();
-        int repeatOften = eventInfo.getRepeatOften();
-        LocalDate nextEventDate = eventInfo.getNextEventDate(eventStartDate, repeatFrequency, repeatOften);
+        LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatFrequency(), eventInfo.getRepeatOften());
         model.addAttribute("nextEventDate", nextEventDate);
         return "index";
-    }
-    @GetMapping("add-event")
-    public String createNewEvent(Model model){
-        model.addAttribute("eventInfo", new Event());
-        return "add-event";
     }
 
 
@@ -43,3 +36,4 @@ public class EventController {
         return "index";
     }
 }
+
