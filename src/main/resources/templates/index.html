@@ -15,12 +15,12 @@
                 Repeat every:
                 <input type="number" id="repeat-often" th:field="*{repeatOften}"><br>
                 Repeat frequency:
-                <select id="repeat-frequency" th:field="*{repeatFrequency}"><br>
+                <select id="repeat-frequency" th:field="*{repeatFrequency}">
                     <option value="daily" selected>Daily</option>
                     <option value="weekly">Weekly</option>
                     <option value="monthly">Monthly</option>
                     <option value="yearly">Yearly</option>
-                </select>
+                </select><br>
                 <button type="submit">Add Event</button>
             </form>
         </div>
