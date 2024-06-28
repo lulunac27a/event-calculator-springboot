@@ -1,7 +1,6 @@
 package com.lulunac27a.eventcalculator;
 
 import com.lulunac27a.eventcalculator.entity.Event;
-import com.lulunac27a.eventcalculator.entity.Event.RepeatFrequency;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
