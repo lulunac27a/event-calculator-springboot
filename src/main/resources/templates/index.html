@@ -9,13 +9,13 @@
             <h1>Add Event</h1>
             <form th:action="@{/add-event}" th:object="${eventInfo}" method="post">
                 Name:
-                <input type="text" id="name" th:field="*{name}"><br>
+                <input type="text" id="name" th:field="*{name}" required><br>
                 Start date:
-                <input type="date" id="start-date" th:field="*{startDate}"><br>
+                <input type="date" id="start-date" th:field="*{startDate}" required><br>
                 Repeat every:
-                <input type="number" id="repeat-often" th:field="*{repeatOften}"><br>
+                <input type="number" id="repeat-often" th:field="*{repeatOften}" required><br>
                 Repeat frequency:
-                <select id="repeat-frequency" th:field="*{repeatFrequency}">
+                <select id="repeat-frequency" th:field="*{repeatFrequency}" required>
                     <option value="daily" selected>Daily</option>
                     <option value="weekly">Weekly</option>
                     <option value="monthly">Monthly</option>
