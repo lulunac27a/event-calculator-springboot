@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class EventController {
     @GetMapping("/")
     public String getNextEvent(@ModelAttribute("eventInfo") Event eventInfo, Model model){
-        model.addAttribute("eventInfo", new Event());
+        model.addAttribute("eventInfo", eventInfo);
         LocalDate eventStartDate = eventInfo.getStartDate();
         RepeatFrequency repeatFrequency = eventInfo.getRepeatFrequency();
         int repeatOften = eventInfo.getRepeatOften();
@@ -31,8 +31,8 @@ public class EventController {
 
 
 
-    @PostMapping("add-event")
-    public String addEvent(@ModelAttribute Event eventInfo, Model model){
+    @PostMapping("create-event")
+    public String addEvent(@ModelAttribute("eventInfo") Event eventInfo, Model model){
         model.addAttribute("eventInfo", eventInfo);
         LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatFrequency(), eventInfo.getRepeatOften());
         model.addAttribute("nextEventDate", nextEventDate);
