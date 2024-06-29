@@ -3,12 +3,12 @@ package com.lulunac27a.eventcalculator.entity;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-import static com.lulunac27a.eventcalculator.entity.Event.RepeatFrequency.DAILY;
+import static com.lulunac27a.eventcalculator.entity.Event.RepeatInterval.DAILY;
 
 public class Event {
     private String name;
     private LocalDate startDate = LocalDate.now();
-    private RepeatFrequency repeatFrequency = DAILY;
+    private RepeatInterval repeatInterval = DAILY;
     private int repeatOften = 1;
 
     public String getName() {
@@ -18,14 +18,14 @@ public class Event {
         return startDate;
     }
 
-    public RepeatFrequency getRepeatFrequency() {
-        return repeatFrequency;
+    public RepeatInterval getRepeatInterval() {
+        return repeatInterval;
     }
 
     public int getRepeatOften() {
         return repeatOften;
     }
-    public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatFrequency repeatFrequency, int repeatOften) {
+    public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatInterval repeatFrequency, int repeatOften) {
         LocalDate nextEventDate = null;
         switch (repeatFrequency) {
             case DAILY:
@@ -60,8 +60,8 @@ public class Event {
         this.startDate = startDate;
     }
 
-    public void setRepeatFrequency(RepeatFrequency repeatFrequency) {
-        this.repeatFrequency = repeatFrequency;
+    public void setRepeatInterval(RepeatInterval repeatInterval) {
+        this.repeatInterval = repeatInterval;
     }
 
     public void setRepeatOften(int repeatOften) {
@@ -69,7 +69,7 @@ public class Event {
     }
 
 
-    public enum RepeatFrequency{
+    public enum RepeatInterval{
         DAILY, WEEKLY, MONTHLY, YEARLY
     }
 }

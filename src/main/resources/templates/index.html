@@ -14,9 +14,9 @@
                 <input type="date" id="start-date" th:field="*{startDate}" required><br>
                 Repeat every:
                 <input type="number" id="repeat-often" th:field="*{repeatOften}" required min="1"><br>
-                Repeat frequency:
-                <select id="repeat-frequency" th:field="*{repeatFrequency}" required>
-                    <option th:each="interval: ${T(com.lulunac27a.eventcalculator.entity.Event.RepeatFrequency).values()}" th:value="${interval}" th:text="${interval}"></option>
+                Repeat interval:
+                <select id="repeat-frequency" th:field="*{repeatInterval}" required>
+                    <option th:each="interval: ${T(com.lulunac27a.eventcalculator.entity.Event.RepeatInterval).values()}" th:value="${interval}" th:text="${interval}"></option>
                 </select><br>
                 <button type="submit">Add Event</button>
             </form>

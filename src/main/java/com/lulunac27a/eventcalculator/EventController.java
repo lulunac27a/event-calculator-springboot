@@ -16,7 +16,7 @@ public class EventController {
     public String getNextEvent(Model model){
         Event eventInfo = new Event();
         model.addAttribute("eventInfo", eventInfo);
-        LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatFrequency(), eventInfo.getRepeatOften());
+        LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(), eventInfo.getRepeatOften());
         model.addAttribute("nextEventDate", nextEventDate);
         return "index";
     }
@@ -26,7 +26,7 @@ public class EventController {
     @PostMapping("create-event")
     public String addEvent(@ModelAttribute("eventInfo") Event eventInfo, Model model){
         model.addAttribute("eventInfo", eventInfo);
-        LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatFrequency(), eventInfo.getRepeatOften());
+        LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(), eventInfo.getRepeatOften());
         model.addAttribute("nextEventDate", nextEventDate);
         return "add-event";
     }
