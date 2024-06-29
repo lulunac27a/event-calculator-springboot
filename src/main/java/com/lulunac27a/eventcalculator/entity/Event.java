@@ -14,6 +14,7 @@ public class Event {
     public String getName() {
         return name;
     }
+
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -25,6 +26,7 @@ public class Event {
     public int getRepeatOften() {
         return repeatOften;
     }
+
     public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatInterval repeatFrequency, int repeatOften) {
         LocalDate nextEventDate = null;
         switch (repeatFrequency) {
@@ -68,8 +70,7 @@ public class Event {
         this.repeatOften = repeatOften;
     }
 
-
-    public enum RepeatInterval{
+    public enum RepeatInterval {
         DAILY, WEEKLY, MONTHLY, YEARLY
     }
 }

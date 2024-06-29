@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Repeating Event Calculator using Spring Boot and Thymeleaf</title>
-    </head>
-    <body>
-        <h1>Repeating Event Calculator using Spring Boot and Thymeleaf</h1>
-        <div class="container">
-            <h1>Add Event</h1>
-            <form th:action="@{/create-event}" th:object="${eventInfo}" method="post">
-                Name:
-                <input type="text" id="name" th:field="*{name}" required><br>
-                Start date:
-                <input type="date" id="start-date" th:field="*{startDate}" required><br>
-                Repeat every:
-                <input type="number" id="repeat-often" th:field="*{repeatOften}" required min="1"><br>
-                Repeat interval:
-                <select id="repeat-frequency" th:field="*{repeatInterval}" required>
-                    <option th:each="interval: ${T(com.lulunac27a.eventcalculator.entity.Event.RepeatInterval).values()}" th:value="${interval}" th:text="${interval}"></option>
-                </select><br>
-                <button type="submit">Add Event</button>
-            </form>
-        </div>
-    </body>
+  <head>
+    <title>Repeating Event Calculator using Spring Boot and Thymeleaf</title>
+  </head>
+  <body>
+    <h1>Repeating Event Calculator using Spring Boot and Thymeleaf</h1>
+    <div class="container">
+      <h1>Add Event</h1>
+      <form th:action="@{/create-event}" th:object="${eventInfo}" method="post">
+        Name:
+        <input type="text" id="name" th:field="*{name}" required /><br />
+        Start date:
+        <input
+          type="date"
+          id="start-date"
+          th:field="*{startDate}"
+          required
+        /><br />
+        Repeat every:
+        <input
+          type="number"
+          id="repeat-often"
+          th:field="*{repeatOften}"
+          required
+          min="1"
+        /><br />
+        Repeat interval:
+        <select id="repeat-frequency" th:field="*{repeatInterval}" required>
+          <option
+            th:each="interval: ${T(com.lulunac27a.eventcalculator.entity.Event.RepeatInterval).values()}"
+            th:value="${interval}"
+            th:text="${interval}"
+          ></option></select
+        ><br />
+        <button type="submit">Add Event</button>
+      </form>
+    </div>
+  </body>
 </html>

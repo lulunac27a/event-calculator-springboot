@@ -13,26 +13,26 @@ import java.time.LocalDate;
 @Controller
 public class EventController {
     @GetMapping("/")
-    public String getNextEvent(Model model){
+    public String getNextEvent(Model model) {
         Event eventInfo = new Event();
         model.addAttribute("eventInfo", eventInfo);
-        LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(), eventInfo.getRepeatOften());
+        LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(),
+                eventInfo.getRepeatOften());
         model.addAttribute("nextEventDate", nextEventDate);
         return "index";
     }
 
-
-
     @PostMapping("create-event")
-    public String addEvent(@ModelAttribute("eventInfo") Event eventInfo, Model model){
+    public String addEvent(@ModelAttribute("eventInfo") Event eventInfo, Model model) {
         model.addAttribute("eventInfo", eventInfo);
-        LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(), eventInfo.getRepeatOften());
+        LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(),
+                eventInfo.getRepeatOften());
         model.addAttribute("nextEventDate", nextEventDate);
         return "add-event";
     }
+
     @RequestMapping("/")
-    public String showHomePage(){
+    public String showHomePage() {
         return "index";
     }
 }
-
