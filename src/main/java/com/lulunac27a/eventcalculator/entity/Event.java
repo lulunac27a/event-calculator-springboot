@@ -3,13 +3,11 @@ package com.lulunac27a.eventcalculator.entity;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-import static com.lulunac27a.eventcalculator.entity.Event.RepeatInterval.DAILY;
-
 public class Event {
     private String name;
-    private LocalDate startDate = LocalDate.now();
-    private RepeatInterval repeatInterval = DAILY;
-    private int repeatOften = 1;
+    private LocalDate startDate;
+    private RepeatInterval repeatInterval;
+    private int repeatOften;
 
     public String getName() {
         return name;
