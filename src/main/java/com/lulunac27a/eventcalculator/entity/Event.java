@@ -25,9 +25,9 @@ public class Event {
         return repeatOften;
     }
 
-    public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatInterval repeatFrequency, int repeatOften) {
+    public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatInterval repeatInterval, int repeatOften) {
         LocalDate nextEventDate = null;
-        switch (repeatFrequency) {
+        switch (repeatInterval) {
             case DAILY:
                 int dayDifference = (int) ChronoUnit.DAYS.between(eventStartDate, LocalDate.now());
                 int dailyTimes = (dayDifference + repeatOften - 1) / repeatOften;
