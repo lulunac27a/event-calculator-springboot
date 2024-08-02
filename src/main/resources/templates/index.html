@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Repeating Event Calculator using Spring Boot and Thymeleaf</title>
@@ -8,16 +8,16 @@
     <div class="container">
       <h1>Add Event</h1>
       <form th:action="@{/create-event}" th:object="${eventInfo}" method="post">
-        Name:
+        <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" required /><br />
-        Start date:
+        <label for="start-date">Start date:</label>
         <input
           type="date"
           id="start-date"
           th:field="*{startDate}"
           required
         /><br />
-        Repeat every:
+        <label for="repeat-often">Repeat every:</label>
         <input
           type="number"
           id="repeat-often"
@@ -25,7 +25,7 @@
           required
           min="1"
         /><br />
-        Repeat interval:
+        <label for="repeat-frequency">Repeat interval:</label>
         <select id="repeat-frequency" th:field="*{repeatInterval}" required>
           <option
             th:each="interval: ${T(com.lulunac27a.eventcalculator.entity.Event.RepeatInterval).values()}"
