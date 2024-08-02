@@ -6,6 +6,7 @@
   <body>
     <h1>Repeating Event Calculator using Spring Boot and Thymeleaf</h1>
     <div class="container">
+      <a href="#" th:href="@{/event-list}">Go to Events List</a>
       <h1>Add Event</h1>
       <form th:action="@{/create-event}" th:object="${eventInfo}" method="post">
         <label for="name">Name:</label>

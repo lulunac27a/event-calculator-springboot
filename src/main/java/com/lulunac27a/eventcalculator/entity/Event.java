@@ -2,12 +2,15 @@ package com.lulunac27a.eventcalculator.entity;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 public class Event {
-    private String name;
-    private LocalDate startDate;
-    private RepeatInterval repeatInterval;
-    private int repeatOften;
+    private String name = "";
+    private LocalDate startDate = LocalDate.now();
+    private RepeatInterval repeatInterval = RepeatInterval.DAILY;
+    private int repeatOften = 1;
+
+    private List<Event> events;
 
     public String getName() {
         return name;
@@ -23,6 +26,10 @@ public class Event {
 
     public int getRepeatOften() {
         return repeatOften;
+    }
+
+    public List<Event> getEvents() {
+        return events;
     }
 
     public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatInterval repeatInterval, int repeatOften) {
@@ -66,6 +73,14 @@ public class Event {
 
     public void setRepeatOften(int repeatOften) {
         this.repeatOften = repeatOften;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
+
+    public void addEvent(Event event) {
+        this.events.add(event);
     }
 
     public enum RepeatInterval {

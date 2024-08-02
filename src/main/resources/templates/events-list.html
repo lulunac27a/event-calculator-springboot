@@ -1,21 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>List of Upcoming Events</title>
   </head>
   <body>
     <h1>List of Upcoming Events</h1>
-    <!--<div class="next-events">
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Next Event Date</th>
-                </tr>
-                <tr th:each="event: ${}">
-                    <td th:text="${event.get(name)}"></td>
-                    <td th:text="${event.get(nextEventDate)}"></td>
-                </tr>
-            </table>
-        </div>-->
+    <div class="next-events">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Next Event Date</th>
+        </tr>
+        <tr th:each="event: ${eventList}">
+          <td th:text="${event.name}"></td>
+          <td th:text="${event.nextEventDate}"></td>
+        </tr>
+      </table>
+      <a href="/">Go Back to Home Page</a>
+      <a href="#" th:href="@{event-list}">Go to Events List</a>
+    </div>
   </body>
 </html>
