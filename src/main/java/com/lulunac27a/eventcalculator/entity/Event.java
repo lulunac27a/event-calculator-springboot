@@ -4,13 +4,14 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-public class Event {
-    private String name = "";
-    private LocalDate startDate = LocalDate.now();
-    private RepeatInterval repeatInterval = RepeatInterval.DAILY;
-    private int repeatOften = 1;
+public class Event {// event class with name, event start date, event repeat interval, event repeat
+                    // often and list of events
+    private String name = "";// event name
+    private LocalDate startDate = LocalDate.now();// event start date
+    private RepeatInterval repeatInterval = RepeatInterval.DAILY;// event repeat interval
+    private int repeatOften = 1;// event repeat often
 
-    private List<Event> events;
+    private List<Event> events;// list of events
 
     public String getName() {
         return name;
@@ -34,6 +35,8 @@ public class Event {
 
     public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatInterval repeatInterval, int repeatOften) {
         LocalDate nextEventDate = null;
+        // calculate next event date based on event start date, repeat interval and
+        // repeat often
         switch (repeatInterval) {
             case DAILY:
                 int dayDifference = (int) ChronoUnit.DAYS.between(eventStartDate, LocalDate.now());
@@ -76,11 +79,11 @@ public class Event {
     }
 
     public void setEvents(List<Event> events) {
-        this.events = events;
+        this.events = events;// set list of events
     }
 
     public void addEvent(Event event) {
-        this.events.add(event);
+        this.events.add(event);// add event
     }
 
     public enum RepeatInterval {

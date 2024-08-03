@@ -13,38 +13,38 @@ import java.time.LocalDate;
 
 @Controller
 public class EventController {
-    private EventService eventService;
+    private EventService eventService;// event service
 
     @GetMapping("/")
     public String getNextEvent(Model model) {
         Event eventInfo = new Event();
         model.addAttribute("eventInfo", eventInfo);
         LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(),
-                eventInfo.getRepeatOften());
+                eventInfo.getRepeatOften());// get next event date based on entered values
         model.addAttribute("nextEventDate", nextEventDate);
         return "index";
     }
 
     @GetMapping("/event-list")
     public String getEventsList(Model model) {
-        model.addAttribute("eventList", eventService.findAll());
+        model.addAttribute("eventList", eventService.findAll());// get list of all events
         return "events-list";
     }
 
     @PostMapping("create-event")
     public String addEvent(@ModelAttribute("eventInfo") Event eventInfo, Model model) {
-        Event eventList = new Event();
-        eventList.addEvent(eventInfo);
-        model.addAttribute("eventList", eventList);
+        // Event eventList = new Event();
+        // eventList.addEvent(eventInfo);//add event based on entered form values
+        // model.addAttribute("eventList", eventList);
         model.addAttribute("eventInfo", eventInfo);
         LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(),
-                eventInfo.getRepeatOften());
+                eventInfo.getRepeatOften());// calculate next event date based on input form values
         model.addAttribute("nextEventDate", nextEventDate);
         return "add-event";
     }
 
     @RequestMapping("/")
     public String showHomePage() {
-        return "index";
+        return "index";// show home page
     }
 }
