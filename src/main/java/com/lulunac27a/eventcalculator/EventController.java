@@ -15,7 +15,7 @@ import java.util.Comparator;
 
 @Controller
 public class EventController {
-    private EventWrapper eventWrapper = new EventWrapper();
+    private final EventWrapper eventWrapper = new EventWrapper();
 
     @GetMapping("/") // index page
     public String getNextEvent(Model model) {
