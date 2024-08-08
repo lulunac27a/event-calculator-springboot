@@ -34,24 +34,28 @@ public class Event {// event class with name, event start date, event repeat int
             case DAILY:// daily events
                 int dayDifference = (int) ChronoUnit.DAYS.between(eventStartDate, currentDate);// calculate date
                                                                                                // difference
-                int dailyTimes = (dayDifference + repeatOften - 1) / repeatOften;// calculate the number of times the
-                                                                                 // event happened
+                int dailyTimes = (int) Math.floor((double) (dayDifference + repeatOften - 1) / repeatOften);// calculate
+                                                                                                            // the
+                                                                                                            // number of
+                                                                                                            // times the
+                                                                                                            // event
+                                                                                                            // happened
                 nextEventDate = eventStartDate.plusDays((long) repeatOften * dailyTimes);// calculate the next event
                                                                                          // date by adding date
                 break;
             case WEEKLY:// weekly events
                 int weekDifference = (int) ChronoUnit.WEEKS.between(eventStartDate, currentDate);
-                int weeklyTimes = (weekDifference + repeatOften - 1) / repeatOften;
+                int weeklyTimes = (int) Math.floor((double) (weekDifference + repeatOften - 1) / repeatOften);
                 nextEventDate = eventStartDate.plusWeeks((long) repeatOften * weeklyTimes);
                 break;
             case MONTHLY:// monthly events
                 int monthDifference = (int) ChronoUnit.MONTHS.between(eventStartDate, currentDate);
-                int monthlyTimes = (monthDifference + repeatOften - 1) / repeatOften;
+                int monthlyTimes = (int) Math.floor((double) (monthDifference + repeatOften - 1) / repeatOften);
                 nextEventDate = eventStartDate.plusMonths((long) repeatOften * monthlyTimes);
                 break;
             case YEARLY:// yearly events
                 int yearDifference = (int) ChronoUnit.YEARS.between(eventStartDate, currentDate);
-                int yearlyTimes = (yearDifference + repeatOften - 1) / repeatOften;
+                int yearlyTimes = (int) Math.floor((double) (yearDifference + repeatOften - 1) / repeatOften);
                 nextEventDate = eventStartDate.plusYears((long) repeatOften * yearlyTimes);
                 break;
         }
