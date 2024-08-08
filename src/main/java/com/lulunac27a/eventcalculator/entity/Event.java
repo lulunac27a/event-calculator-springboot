@@ -29,10 +29,6 @@ public class Event {// event class with name, event start date, event repeat int
         return repeatOften;
     }
 
-    public List<Event> getEvents() {
-        return events;
-    }
-
     public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatInterval repeatInterval, int repeatOften) {
         LocalDate nextEventDate = null;
         // calculate next event date based on event start date, repeat interval and
@@ -76,14 +72,6 @@ public class Event {// event class with name, event start date, event repeat int
 
     public void setRepeatOften(int repeatOften) {
         this.repeatOften = repeatOften;
-    }
-
-    public void setEvents(List<Event> events) {
-        this.events = events;// set list of events
-    }
-
-    public void addEvent(Event event) {
-        this.events.add(event);// add event
     }
 
     public enum RepeatInterval {
