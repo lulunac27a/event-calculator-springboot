@@ -34,7 +34,8 @@ public class Event {// event class with name, event start date, event repeat int
             case DAILY:// daily events
                 int dayDifference = (int) ChronoUnit.DAYS.between(eventStartDate, LocalDate.now());// calculate date
                                                                                                    // difference
-                int dailyTimes = (dayDifference + repeatOften - 1) / repeatOften;// calculate times event happened
+                int dailyTimes = (dayDifference + repeatOften - 1) / repeatOften;// calculate number of times event
+                                                                                 // happened
                 nextEventDate = eventStartDate.plusDays((long) repeatOften * dailyTimes);// calculate next event date by
                                                                                          // adding date
                 break;
