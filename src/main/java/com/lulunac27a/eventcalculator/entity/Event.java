@@ -28,7 +28,7 @@ public class Event {// event class with name, event start date, event repeat int
     }
 
     public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatInterval repeatInterval, int repeatOften) {
-        LocalDate currentDate = LocalDate.now();// current date
+        LocalDate currentDate = LocalDate.now();// get current date
         LocalDate nextEventDate = null;// calculate next event date based on event start date, repeat interval and
                                        // repeat often
         switch (repeatInterval) {
