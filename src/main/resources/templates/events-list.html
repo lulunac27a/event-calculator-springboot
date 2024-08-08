@@ -12,10 +12,12 @@
           <th>Name</th>
           <th>Next Event Date</th>
         </tr>
-        <tr th:each="event: ${eventList}">
+        <tr th:each="event: ${eventList.events}">
           <!--repeat for each event in events list-->
           <td th:text="${event.name}"></td>
-          <td th:text="${event.nextEventDate}"></td>
+          <td
+            th:text="${event.getNextEventDate(event.startDate, event.repeatInterval, event.repeatOften)}"
+          ></td>
         </tr>
       </table>
       <a href="/">Go Back to Home Page</a>
