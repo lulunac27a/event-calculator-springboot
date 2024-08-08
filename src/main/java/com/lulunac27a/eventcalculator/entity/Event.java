@@ -2,7 +2,6 @@ package com.lulunac27a.eventcalculator.entity;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.List;
 
 public class Event {// event class with name, event start date, event repeat interval, event repeat
                     // often and list of events
