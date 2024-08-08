@@ -6,18 +6,18 @@ import java.util.List;
 import com.lulunac27a.eventcalculator.entity.Event;
 
 public class EventWrapper {
-    private List<Event> events = new ArrayList<>();
+    private List<Event> events = new ArrayList<>();// list of events
 
     public List<Event> getEvents() {
-        return events;
+        return events;// get list of events
     }
 
     public void setEvents(List<Event> events) {
-        this.events = events;
+        this.events = events;// set list of events
     }
 
     public void addEvent(Event event) {
-        this.events.add(event);
+        this.events.add(event);// add event
     }
 
 }
