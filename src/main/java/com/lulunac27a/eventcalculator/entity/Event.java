@@ -28,16 +28,16 @@ public class Event {// event class with name, event start date, event repeat int
 
     public LocalDate getNextEventDate(LocalDate eventStartDate, RepeatInterval repeatInterval, int repeatOften) {
         LocalDate currentDate = LocalDate.now();// get current date
-        LocalDate nextEventDate = null;// calculate next event date based on event start date, repeat interval and
+        LocalDate nextEventDate = null;// calculate the next event date based on event start date, repeat interval and
                                        // repeat often
         switch (repeatInterval) {
             case DAILY:// daily events
                 int dayDifference = (int) ChronoUnit.DAYS.between(eventStartDate, currentDate);// calculate date
                                                                                                // difference
-                int dailyTimes = (dayDifference + repeatOften - 1) / repeatOften;// calculate number of times event
-                                                                                 // happened
-                nextEventDate = eventStartDate.plusDays((long) repeatOften * dailyTimes);// calculate next event date by
-                                                                                         // adding date
+                int dailyTimes = (dayDifference + repeatOften - 1) / repeatOften;// calculate the number of times the
+                                                                                 // event happened
+                nextEventDate = eventStartDate.plusDays((long) repeatOften * dailyTimes);// calculate the next event
+                                                                                         // date by adding date
                 break;
             case WEEKLY:// weekly events
                 int weekDifference = (int) ChronoUnit.WEEKS.between(eventStartDate, currentDate);

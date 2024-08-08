@@ -6,8 +6,8 @@
 table,
 td {
   /*table styles*/
-  border: 1px solid black; /*set bolrder color to black*/
-  width: 50%; /*set width to 50% of wiviewpoint width*/
+  border: 1px solid black; /*set border color to black*/
+  width: 50%; /*set width to 50% of viewpoint width*/
   height: 50px; /*set height to 50 pixels*/
   text-align: center; /*center text content*/
   table-layout: fixed; /*fixed table layout*/

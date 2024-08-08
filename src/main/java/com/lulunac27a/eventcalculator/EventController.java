@@ -19,10 +19,10 @@ public class EventController {
 
     @GetMapping("/") // index page
     public String getNextEvent(Model model) {
-        Event eventInfo = new Event();// get event info based on list of events
+        Event eventInfo = new Event();// get event info based on the list of events
         model.addAttribute("eventInfo", eventInfo);
         LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(),
-                eventInfo.getRepeatOften());// get next event date based on entered values
+                eventInfo.getRepeatOften());// get the next event date based on entered values
         model.addAttribute("nextEventDate", nextEventDate);
         return "index";// show index page
     }
@@ -37,7 +37,7 @@ public class EventController {
                                                                                                                  // event
                                                                                                                  // date
         eventWrapper.getEvents().sort(comparator);// sort events using comparator
-        model.addAttribute("eventList", eventWrapper);// get list of all events
+        model.addAttribute("eventList", eventWrapper);// get the list of all events
         return "events-list";// show list of events
     }
 
@@ -46,7 +46,7 @@ public class EventController {
         eventWrapper.addEvent(eventInfo);// add event based on entered form values
         model.addAttribute("eventInfo", eventInfo);
         LocalDate nextEventDate = eventInfo.getNextEventDate(eventInfo.getStartDate(), eventInfo.getRepeatInterval(),
-                eventInfo.getRepeatOften());// calculate next event date based on input form values
+                eventInfo.getRepeatOften());// calculate the next event date based on input form values
         model.addAttribute("nextEventDate", nextEventDate);
         return "add-event";// show add new event page
     }

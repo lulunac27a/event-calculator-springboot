@@ -9,11 +9,11 @@ public class EventWrapper {
     private List<Event> events = new ArrayList<>();// list of events
 
     public List<Event> getEvents() {
-        return events;// get list of events
+        return events;// get the list of events
     }
 
     public void setEvents(List<Event> events) {
-        this.events = events;// set list of events
+        this.events = events;// set the list of events
     }
 
     public void addEvent(Event event) {
