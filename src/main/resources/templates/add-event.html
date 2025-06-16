@@ -1,26 +1,29 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>Add Event Summary</title>
-    <link th:href="@{/index.css}" rel="stylesheet" />
-  </head>
-  <body>
-    <h1>Add Event Summary</h1>
-    <div class="container">
-      <!--show event summary-->
-      <p>Event Name: <span th:text="${eventInfo.name}"></span></p>
-      <p>Event Start Date: <span th:text="${eventInfo.startDate}"></span></p>
-      <p>
-        Event Repeat Frequency: <span th:text="${eventInfo.repeatOften}"></span>
-      </p>
-      <p>
-        Event Repeat Interval:
-        <span th:text="${eventInfo.repeatInterval}"></span>
-      </p>
-      <h2>Next Event:</h2>
-      <p>Next Event Date: <span th:text="${nextEventDate}"></span></p>
-      <a href="/">Go Back to Home Page</a>
-      <a href="#" th:href="@{/event-list}">Go to Events List</a>
-    </div>
-  </body>
+    <head>
+        <title>Add Event Summary</title>
+        <link th:href="@{/index.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Add Event Summary</h1>
+        <div class="container">
+            <!--show event summary-->
+            <p>Event Name: <span th:text="${eventInfo.name}"></span></p>
+            <p>
+                Event Start Date: <span th:text="${eventInfo.startDate}"></span>
+            </p>
+            <p>
+                Event Repeat Frequency:
+                <span th:text="${eventInfo.repeatOften}"></span>
+            </p>
+            <p>
+                Event Repeat Interval:
+                <span th:text="${eventInfo.repeatInterval}"></span>
+            </p>
+            <h2>Next Event:</h2>
+            <p>Next Event Date: <span th:text="${nextEventDate}"></span></p>
+            <a href="/">Go Back to Home Page</a>
+            <a href="#" th:href="@{/event-list}">Go to Events List</a>
+        </div>
+    </body>
 </html>

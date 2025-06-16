@@ -1,43 +1,58 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>Repeating Event Calculator using Spring Boot and Thymeleaf</title>
-    <link th:href="@{/index.css}" rel="stylesheet" />
-  </head>
-  <body>
-    <h1>Repeating Event Calculator using Spring Boot and Thymeleaf</h1>
-    <div class="container">
-      <a href="#" th:href="@{/event-list}">Go to Events List</a>
-      <h1>Add Event</h1>
-      <form th:action="@{/create-event}" th:object="${eventInfo}" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" th:field="*{name}" required /><br />
-        <label for="start-date">Start date:</label>
-        <input
-          type="date"
-          id="start-date"
-          th:field="*{startDate}"
-          required
-        /><br />
-        <label for="repeat-often">Repeat every:</label>
-        <input
-          type="number"
-          id="repeat-often"
-          th:field="*{repeatOften}"
-          required
-          min="1"
-        /><br />
-        <label for="repeat-frequency">Repeat interval:</label>
-        <select id="repeat-frequency" th:field="*{repeatInterval}" required>
-          <option
-            th:each="interval: ${T(com.lulunac27a.eventcalculator.entity.Event.RepeatInterval).values()}"
-            th:value="${interval}"
-            th:text="${interval}"
-          ></option></select
-        ><br />
-        <button type="submit">Add Event</button
-        ><!--submit form to add event to events list-->
-      </form>
-    </div>
-  </body>
+    <head>
+        <title>
+            Repeating Event Calculator using Spring Boot and Thymeleaf
+        </title>
+        <link th:href="@{/index.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Repeating Event Calculator using Spring Boot and Thymeleaf</h1>
+        <div class="container">
+            <a href="#" th:href="@{/event-list}">Go to Events List</a>
+            <h1>Add Event</h1>
+            <form
+                th:action="@{/create-event}"
+                th:object="${eventInfo}"
+                method="post"
+            >
+                <label for="name">Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    th:field="*{name}"
+                    required
+                /><br />
+                <label for="start-date">Start date:</label>
+                <input
+                    type="date"
+                    id="start-date"
+                    th:field="*{startDate}"
+                    required
+                /><br />
+                <label for="repeat-often">Repeat every:</label>
+                <input
+                    type="number"
+                    id="repeat-often"
+                    th:field="*{repeatOften}"
+                    required
+                    min="1"
+                /><br />
+                <label for="repeat-frequency">Repeat interval:</label>
+                <select
+                    id="repeat-frequency"
+                    th:field="*{repeatInterval}"
+                    required
+                >
+                    <option
+                        th:each="interval: ${T(com.lulunac27a.eventcalculator.entity.Event.RepeatInterval).values()}"
+                        th:value="${interval}"
+                        th:text="${interval}"
+                    ></option></select
+                ><br />
+                <button type="submit">Add Event</button
+                ><!--submit form to add event to events list-->
+            </form>
+        </div>
+    </body>
 </html>

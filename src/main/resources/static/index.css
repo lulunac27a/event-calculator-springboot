@@ -1,14 +1,15 @@
 * {
-  /*global styles*/
-  font-family: system-ui, sans-serif; /*set default font to system-based font*/
+    /*global styles*/
+    font-family:
+        system-ui, sans-serif; /*set default font to system-based font*/
 }
 
 table,
 td {
-  /*table styles*/
-  border: 1px solid black; /*set border color to black*/
-  width: 50%; /*set width to 50% of viewpoint width*/
-  height: 50px; /*set height to 50 pixels*/
-  text-align: center; /*center text content*/
-  table-layout: fixed; /*fixed table layout*/
+    /*table styles*/
+    border: 1px solid black; /*set border color to black*/
+    width: 50%; /*set width to 50% of viewpoint width*/
+    height: 50px; /*set height to 50 pixels*/
+    text-align: center; /*center text content*/
+    table-layout: fixed; /*fixed table layout*/
 }
